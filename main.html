@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Registration Portal</title>
+    <title>TeamsZ</title>
     <style>
         * {
             margin: 0;
@@ -13,10 +13,80 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #323130 0%, #ff003c 100%);  
             min-height: 100vh;
             padding: 20px;
         }
+
+        @media (max-width: 768px) {
+
+
+header h1 {
+font-size: 2em;
+}
+
+
+.tab-btn {
+padding: 10px 20px;
+font-size: 14px;
+}
+
+
+.form-container, .teams-container {
+padding: 20px;
+}
+}
+
+
+/* Extra small screens */
+@media (max-width: 480px) {
+header h1 {
+font-size: 1.5em;
+}
+
+
+.tab-btn {
+padding: 8px 12px;
+font-size: 12px;
+}
+
+
+.stat-card {
+flex: 1 1 100%;
+}
+
+
+.member-section h3 {
+font-size: 16px;
+}
+
+
+.team-avatar-container {
+width: 100px;
+height: 100px;
+}
+
+
+.team-avatar {
+font-size: 36px;
+}
+}
+
+
+/* Ensure buttons and inputs are full width */
+button, input, select {
+width: 100%;
+box-sizing: border-box;
+}
+
+
+/* Optional: allow teams grid to scroll horizontally on very small screens */
+@media (max-width: 400px) {
+.teams-grid {
+display: flex;
+flex-direction: column;
+}
+}
 
         .container {
             max-width: 1400px;
@@ -73,7 +143,7 @@
         }
 
         .form-container, .teams-container {
-            background: white;
+            background: rgb(255, 255, 255);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -151,7 +221,7 @@
         }
 
         .team-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e2c3c3 100%);
             border-radius: 15px;
             padding: 25px;
             position: relative;
@@ -162,6 +232,7 @@
         .team-card:hover {
             transform: translateY(-5px);
         }
+        
 
         .team-avatar-container {
             position: relative;
@@ -309,7 +380,7 @@
     <div class="container">
         <header>
             <h1>🎯 Team Registration Portal</h1>
-            <p>Register your team for Government Schemes</p>
+            <p>Register your team for Student Activity Project 1</p>
         </header>
 
         <div class="nav-tabs">
@@ -321,39 +392,44 @@
         <!-- Register Tab -->
         <div id="register" class="tab-content active">
             <div class="form-container">
-                <h2 style="margin-bottom: 25px; color: #667eea;">Register Your Team</h2>
+                <h2 style="margin-bottom: 25px; color: #3f5bdb;">Register Your Team</h2>
                 <div id="registerMessage"></div>
                 
                 <form id="registerForm">
                     <div class="form-group">
-                        <label>Your Name (Team Leader)*</label>
-                        <input type="text" id="leaderName" required>
+                        <label>Your Name (RegisteringUser)*</label>
+                        <input type="text" id="leaderName" placeholder="e.g, Krishna Rao" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Your PRN ID*</label>
-                        <input type="text" id="leaderPRN" required placeholder="e.g., PRN001">
+                        <label>Your Roll No.*</label>
+                        <input type="text" id="leaderPRN" required placeholder="e.g, 17">
                     </div>
 
                     <div class="form-group">
-                        <label>Team Name* (Format: gov-scheme-name)</label>
-                        <input type="text" id="teamName" required placeholder="e.g., gov-digital-india">
+                        <label>Team Name* (Format: gov-schemename)</label>
+                        <input type="text" id="teamName" required placeholder="e.g, gov-digitalindia">
                     </div>
 
                     <div class="form-group">
                         <label>Scheme Selected*</label>
                         <select id="schemeSelected" required>
                             <option value="">Select a scheme</option>
-                            <option value="Digital India">Digital India</option>
-                            <option value="Make in India">Make in India</option>
-                            <option value="Skill India">Skill India</option>
-                            <option value="Startup India">Startup India</option>
-                            <option value="Swachh Bharat">Swachh Bharat</option>
-                            <option value="Ayushman Bharat">Ayushman Bharat</option>
-                            <option value="PM Kisan">PM Kisan</option>
-                            <option value="Smart Cities">Smart Cities</option>
-                            <option value="Ujjwala Yojana">Ujjwala Yojana</option>
-                            <option value="Jan Dhan Yojana">Jan Dhan Yojana</option>
+                            <option value="Agriculture,Rural and Environment">Agriculture,Rural & Environment</option>
+                            <option value="Banking,Financial Services and Insurance">Banking,Financial Services and Insurance</option>
+                            <option value="Business and Entrepreneruship">Business and Entrepreneruship</option>
+                            <option value="Education and Learning">Education and Learning</option>
+                            <option value="Health and Wellness">Health and Wellness</option>
+                            <option value="Housing and Shelter">Housing and Shelter</option>
+                            <option value="Public Safety , Law and Justice">Public Safety , Law and Justice</option>
+                            <option value="Science,IT and Communications">Science,IT and Communications</option>
+                            <option value="Skills and Employment">Skills and Employment</option>
+                            <option value="Social Welfare and Empowerment">Social Welfare and Empowerment</option>
+                            <option value="Sports and Culture">Sports and Culture</option>
+                            <option value="Transport and Infrastructure">Transport and Infrastructure</option>
+                            <option value="Travel and Tourism">Travel and Tourism</option>
+                            <option value="Utility and Sanitation">Utility and Sanitation</option>
+                            <option value="Women and Child">Women and Child</option>
                         </select>
                     </div>
 
@@ -370,25 +446,25 @@
         <!-- Login Tab -->
         <div id="login" class="tab-content">
             <div class="form-container">
-                <h2 style="margin-bottom: 25px; color: #667eea;">Team Leader Login</h2>
+                <h2 style="margin-bottom: 25px; color: #3c51b0;">RegisteringUser Login</h2>
                 <div id="loginMessage"></div>
                 
                 <form id="loginForm">
                     <div class="form-group">
                         <label>Your Name*</label>
-                        <input type="text" id="loginName" required>
+                        <input type="text" id="loginName" placeholder="e.g, Krishna Rao" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Your PRN ID*</label>
-                        <input type="text" id="loginPRN" required>
+                        <label>Your Roll No.*</label>
+                        <input type="text" id="loginPRN" placeholder="e.g, 17" required>
                     </div>
 
                     <button type="submit" class="btn">Login</button>
                 </form>
 
                 <div id="editSection" style="display: none; margin-top: 30px;">
-                    <h3 style="color: #667eea; margin-bottom: 20px;">Edit Your Team</h3>
+                    <h3 style="color: #2d46b3; margin-bottom: 20px;">Edit Your Team</h3>
                     <form id="editForm">
                         <div class="form-group">
                             <label>Team Name</label>
@@ -398,17 +474,22 @@
                         <div class="form-group">
                             <label>Scheme Selected</label>
                             <select id="editScheme" required>
-                                <option value="">Select a scheme</option>
-                                <option value="Digital India">Digital India</option>
-                                <option value="Make in India">Make in India</option>
-                                <option value="Skill India">Skill India</option>
-                                <option value="Startup India">Startup India</option>
-                                <option value="Swachh Bharat">Swachh Bharat</option>
-                                <option value="Ayushman Bharat">Ayushman Bharat</option>
-                                <option value="PM Kisan">PM Kisan</option>
-                                <option value="Smart Cities">Smart Cities</option>
-                                <option value="Ujjwala Yojana">Ujjwala Yojana</option>
-                                <option value="Jan Dhan Yojana">Jan Dhan Yojana</option>
+                            <option value="">Select a scheme</option>
+                            <option value="Agriculture,Rural and Environment">Agriculture,Rural & Environment</option>
+                            <option value="Banking,Financial Services and Insurance">Banking,Financial Services and Insurance</option>
+                            <option value="Business and Entrepreneruship">Business and Entrepreneruship</option>
+                            <option value="Education and Learning">Education and Learning</option>
+                            <option value="Health and Wellness">Health and Wellness</option>
+                            <option value="Housing and Shelter">Housing and Shelter</option>
+                            <option value="Public Safety , Law and Justice">Public Safety , Law and Justice</option>
+                            <option value="Science,IT and Communications">Science,IT and Communications</option>
+                            <option value="Skills and Employment">Skills and Employment</option>
+                            <option value="Social Welfare and Empowerment">Social Welfare and Empowerment</option>
+                            <option value="Sports and Culture">Sports and Culture</option>
+                            <option value="Transport and Infrastructure">Transport and Infrastructure</option>
+                            <option value="Travel and Tourism">Travel and Tourism</option>
+                            <option value="Utility and Sanitation">Utility and Sanitation</option>
+                            <option value="Women and Child">Women and Child</option>
                             </select>
                         </div>
 
@@ -422,17 +503,47 @@
                     </form>
                 </div>
             </div>
+
+            <!--YAICHAYCHARDA-->
+             <!-- Member Login 
+<div class="form-container" id="memberLoginSection">
+  <h2 style="margin-bottom: 25px; color: #3c51b0;">Member Login</h2>
+
+  <div class="form-group">
+    <label >Your Name*</label>
+    <input type="text" id="memberName" placeholder="e.g, Krishna Rao" required />
+  </div>
+  
+  <div class="form-group">
+    <label>Your PRN ID*</label>
+  <input type="text" id="memberPRN" placeholder="e.g, 12510XXXXX" required />
+  </div>
+
+  <button onclick="memberLogin()" class="btn">Login</button>
+</div> -->
+
+<!-- Member Dashboard (after login) 
+<div class="form-container" id="memberDashboard" style="display:none;">
+  <h2>Welcome Member</h2>
+  <p id="memberInfo"></p>
+  <button onclick="leaveTeam()">Leave Team</button>
+</div> -->
+
+
+
         </div>
+
+
 
         <!-- All Teams Tab -->
         <div id="teams" class="tab-content">
             <div class="teams-container">
-                <h2 style="margin-bottom: 25px; color: #667eea;">Registered Teams</h2>
+                <h2 style="margin-bottom: 25px; color: #3b53ba;">Registered Teams</h2>
                 
                 <div class="stats">
                     <div class="stat-card">
                         <div class="stat-number" id="totalTeams">0</div>
-                        <div class="stat-label">Total Teams</div>
+                        <div class="stat-label">Total Teams ( /11)</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="completeTeams">0</div>
@@ -450,6 +561,49 @@
     </div>
 
     <script type="module">
+      let teams = {}; //top of the script
+
+    
+
+        function showPopupMessage(message, type = "info") {
+    // Agar pehle ka popup hai toh hata do
+    let oldPopup = document.getElementById("popupMessageBox");
+    if (oldPopup) oldPopup.remove();
+
+    // Naya div create karo
+    const popup = document.createElement("div");
+    popup.id = "popupMessageBox";
+    popup.textContent = message;
+
+    // Style apply karo
+    popup.style.position = "fixed";
+    popup.style.top = "20px";
+    popup.style.right = "20px";
+    popup.style.zIndex = "9999";
+    popup.style.padding = "12px 18px";
+    popup.style.borderRadius = "8px";
+    popup.style.color = "#fff";
+    popup.style.fontWeight = "600";
+    popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+    popup.style.transition = "opacity 0.3s ease";
+
+    // Color based on type
+    if (type === "success") popup.style.background = "#28a745";
+    else if (type === "error") popup.style.background = "#dc3545";
+    else popup.style.background = "#007bff";
+
+    document.body.appendChild(popup);
+
+    // 3 sec baad fadeout
+    setTimeout(() => {
+        popup.style.opacity = "0";
+        setTimeout(() => popup.remove(), 500);
+    }, 3000);
+}
+
+
+
+
         // Firebase Configuration
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getDatabase, ref, set, get, update, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
@@ -473,9 +627,18 @@ const firebaseConfig = {
 
 };
 
+    
+
 
         const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app, 'https://saproject-5f75d-default-rtdb.asia-southeast1.firebasedatabase.app//');
+        const database = getDatabase(app, 'https://saproject-5f75d-default-rtdb.asia-southeast1.firebasedatabase.app/');
+
+        //YAHAKOITEENDA
+        onValue(ref(database, 'teams/'), (snapshot) => {
+    teams = snapshot.val() || {};
+    displayTeams();
+});
+
         
         let currentUser = null;
 
@@ -494,7 +657,7 @@ const firebaseConfig = {
                             value="${values[i]?.name || ''}">
                     </div>
                     <div class="form-group">
-                        <label>Member ${i + 1} PRN ${i < 2 ? '*' : ''}</label>
+                        <label>Member ${i + 1} Roll No. ${i < 2 ? '*' : ''}</label>
                         <input type="text" class="member-prn" data-index="${i}" ${i < 2 ? 'required' : ''} 
                             value="${values[i]?.prn || ''}">
                     </div>
@@ -517,7 +680,7 @@ const firebaseConfig = {
             
             // Validate team name format
             if (!teamName.startsWith('gov-')) {
-                showMessage('registerMessage', 'Team name must start with "gov-"', 'error');
+                showPopupMessage('Team name must start with "gov-"', 'error');
                 return;
             }
 
@@ -536,7 +699,7 @@ const firebaseConfig = {
             }
 
             if (members.length < 3) {
-                showMessage('registerMessage', 'Team must have at least 3 members (including leader)', 'error');
+                showPopupMessage('Team must have at least 3 members (including leader)', 'error');
                 return;
             }
 
@@ -546,7 +709,7 @@ const firebaseConfig = {
             const teams = snapshot.val() || {};
             
             if (Object.keys(teams).length >= 11) {
-                showMessage('registerMessage', 'Maximum 11 teams limit reached!', 'error');
+                showPopupMessage('Maximum 11 teams limit reached!', 'error');
                 return;
             }
 
@@ -554,26 +717,38 @@ const firebaseConfig = {
             for (let teamId in teams) {
                 const team = teams[teamId];
                 for (let member of team.members) {
-                    if (member.prn === leaderPRN) {
-                        showMessage('registerMessage', 'This PRN is already registered in another team!', 'error');
-                        return;
+        if (members.some(m => m.prn === member.prn)) {
+            showPopupMessage(`Roll No. ${member.prn} already exists in another team!`, 'error');
+
+            return;
                     }
                 }
             }
 
-            // Create team
-            const teamId = Date.now().toString();
-            const teamData = {
-                teamName,
-                schemeSelected,
-                members,
-                createdAt: new Date().toISOString(),
-                leaderPRN
-            };
+            // Create team ithe YAICHAY
+// Count current teams
+const teamCount = Object.keys(teams).length;
+const teamNumber = teamCount + 1;
+
+// Unique ID with timestamp
+const teamId = `${Date.now()}-${teamNumber}`;
+
+const teamData = {
+    teamNumber,
+    teamName,
+    schemeSelected,
+    members,
+    createdAt: new Date().toISOString(),
+    leaderPRN
+};
+
 
             await set(ref(database, `teams/${teamId}`), teamData);
             
-            showMessage('registerMessage', 'Team registered successfully!', 'success');
+            showPopupMessage("Team registered successfully!", "success");
+
+            switchTab('teams', { currentTarget: document.querySelector('.tab-btn:nth-child(3)') });
+
             document.getElementById('registerForm').reset();
             generateMemberInputs('membersContainer');
         });
@@ -603,7 +778,7 @@ const firebaseConfig = {
             
             if (foundTeam) {
                 currentUser = { teamId, prn };
-                showMessage('loginMessage', 'Login successful!', 'success');
+                showPopupMessage('Login successful!', 'success');
                 document.getElementById('loginForm').style.display = 'none';
                 document.getElementById('editSection').style.display = 'block';
                 
@@ -612,58 +787,112 @@ const firebaseConfig = {
                 document.getElementById('editScheme').value = foundTeam.schemeSelected;
                 generateMemberInputs('editMembersContainer', 5, foundTeam.members.slice(1));
             } else {
-                showMessage('loginMessage', 'Invalid credentials!', 'error');
+                showPopupMessage('Invalid credentials!', 'error');
             }
         });
 
-        // Edit Form Handler
-        document.getElementById('editForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!currentUser) return;
-            
-            const teamName = document.getElementById('editTeamName').value.trim();
-            const schemeSelected = document.getElementById('editScheme').value;
-            
-            // Validate team name format
-            if (!teamName.startsWith('gov-')) {
-                showMessage('loginMessage', 'Team name must start with "gov-"', 'error');
-                return;
-            }
-            
-            // Get leader info
-            const teamsRef = ref(database, `teams/${currentUser.teamId}`);
-            const snapshot = await get(teamsRef);
-            const currentTeam = snapshot.val();
-            const leader = currentTeam.members[0];
-            
-            // Collect updated members
-            const members = [leader];
-            const memberNames = document.querySelectorAll('#editMembersContainer .member-name');
-            const memberPRNs = document.querySelectorAll('#editMembersContainer .member-prn');
-            
-            for (let i = 0; i < memberNames.length; i++) {
-                const name = memberNames[i].value.trim();
-                const prn = memberPRNs[i].value.trim();
-                
-                if (name && prn) {
-                    members.push({ name, prn, isLeader: false });
-                }
-            }
-            
-            if (members.length < 3) {
-                showMessage('loginMessage', 'Team must have at least 3 members (including leader)', 'error');
-                return;
-            }
-            
-            await update(ref(database, `teams/${currentUser.teamId}`), {
-                teamName,
-                schemeSelected,
-                members
-            });
-            
-            showMessage('loginMessage', 'Team updated successfully!', 'success');
-        });
+// Edit Form Handler (fixed)
+document.getElementById('editForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  try {
+    if (!currentUser || !currentUser.teamId) {
+      showPopupMessage('Please login as the team leader before updating the team.', 'error');
+      return;
+    }
+
+    const teamName = document.getElementById('editTeamName').value.trim();
+    const schemeSelected = document.getElementById('editScheme').value;
+
+    if (!teamName.startsWith('gov-')) {
+      showPopupMessage('Team name must start with "gov-"', 'error');
+      return;
+    }
+
+    // Fetch latest teams snapshot from DB
+    const allSnapshot = await get(ref(database, 'teams'));
+    const allTeams = allSnapshot.val() || {};
+
+    // Get the current team object (using the Firebase key stored in currentUser.teamId)
+    const currentTeam = allTeams[currentUser.teamId];
+    if (!currentTeam) {
+      showPopupMessage('Current team not found. Please relogin.', 'error');
+      return;
+    }
+
+    // Leader (keep as first member)
+    const leader = (currentTeam.members && currentTeam.members[0]) ? currentTeam.members[0] : { name: '', prn: '' };
+
+    // Collect updated members (leader stays first)
+    const members = [leader];
+    const memberNames = document.querySelectorAll('#editMembersContainer .member-name');
+    const memberPRNs = document.querySelectorAll('#editMembersContainer .member-prn');
+
+    for (let i = 0; i < memberNames.length; i++) {
+      const name = memberNames[i].value.trim();
+      const prn = memberPRNs[i].value.trim();
+
+      // If both empty -> skip (user left slots empty)
+      if (!name && !prn) continue;
+
+      // If one of them missing -> error
+      if (!name || !prn) {
+        showPopupMessage('Please fill both Name and Roll No. for each member entry.', 'error');
+        return;
+      }
+
+      members.push({ name, prn, isLeader: false });
+    }
+
+    // Minimum members check (including leader)
+    if (members.length < 3) {
+      showPopupMessage('Team must have at least 3 members (including leader).', 'error');
+      return;
+    }
+
+    // 1) Check duplicates WITHIN the updated members (same team)
+    const prnCounts = {};
+    for (const m of members) {
+      prnCounts[m.prn] = (prnCounts[m.prn] || 0) + 1;
+    }
+    for (const prn in prnCounts) {
+      if (prnCounts[prn] > 1) {
+        showPopupMessage(`Duplicate Roll No. ${prn} in the team members.`, 'error');
+        return;
+      }
+    }
+
+    // 2) Check duplicates ACROSS other teams (ignore current team)
+    for (const id in allTeams) {
+      if (id === currentUser.teamId) continue; // ignore our own team
+      const team = allTeams[id];
+      if (!team.members) continue;
+      for (const m of team.members) {
+        if (members.some(mem => mem.prn === m.prn)) {
+          showPopupMessage(`Roll No. ${m.prn} already exists in another team!`, 'error');
+          return;
+        }
+      }
+    }
+
+    // All checks passed → update DB
+    await update(ref(database, `teams/${currentUser.teamId}`), {
+      teamName,
+      schemeSelected,
+      members
+    });
+
+    showPopupMessage('Team updated successfully!', 'success');
+
+    // Switch to All Teams tab so user sees updated list
+    switchTab('teams', { currentTarget: document.querySelector('.tab-btn:nth-child(3)') });
+
+  } catch (err) {
+    console.error('Edit team error:', err);
+    showPopupMessage('Error updating team: ' + (err.message || err), 'error');
+  }
+});
+
 
         // Load and display teams
         function displayTeams(teams) {
@@ -703,8 +932,10 @@ const firebaseConfig = {
                 let membersHTML = team.members.map(m => `
                     <div class="member-item">
                         <span>${m.name}</span>
+                        
                         <span style="color: #666; font-size: 12px;">${m.prn}</span>
-                    </div>
+                    
+                        </div>
                 `).join('');
                 
                 for (let i = memberCount; i < 6; i++) {
@@ -716,6 +947,8 @@ const firebaseConfig = {
                     `;
                 }
                 
+//YAICHAIDONDA
+
                 card.innerHTML = `
                     <div class="team-avatar-container">
                         ${vacancyCircle}
@@ -723,10 +956,13 @@ const firebaseConfig = {
                             ${team.teamName.charAt(4).toUpperCase()}
                         </div>
                     </div>
-                    <div class="team-name">${team.teamName}</div>
+
+                
+                    <div class="team-name">#${team.teamNumber} ${team.teamName}</div>
+
                     <div class="team-scheme">${team.schemeSelected}</div>
                     ${vacancy > 0 ? `<div style="text-align: center; color: #ff6b6b; font-weight: bold; margin-bottom: 10px;">
-                        ${vacancy} Vacancy${vacancy > 1 ? 'ies' : ''}
+                        Vacancy : ${vacancy}
                     </div>` : '<div style="text-align: center; color: #27ae60; font-weight: bold; margin-bottom: 10px;">✓ Complete Team</div>'}
                     <div class="team-members">
                         <strong style="display: block; margin-bottom: 10px;">Team Members (${memberCount}/6)</strong>
@@ -762,7 +998,7 @@ const firebaseConfig = {
             document.getElementById('loginForm').style.display = 'block';
             document.getElementById('editSection').style.display = 'none';
             document.getElementById('loginForm').reset();
-            showMessage('loginMessage', 'Logged out successfully!', 'success');
+            showPopupMessage('Logged out successfully!', 'success');
         };
 
 window.switchTab = function(tabName, event) {
